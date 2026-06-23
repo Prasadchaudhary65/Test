@@ -1,96 +1,360 @@
-"""Authentication and authorization module."""
-
-import bcrypt
+import streamlit as st
+import pandas as pd
+import sqlite3
 from datetime import datetime
-from typing import Optional
-from sqlalchemy.orm import Session
-from database import User, UserRole, AuditLog
 
+# ---------------------------------
+# DATABASE
+# ---------------------------------
 
-def hash_password(password: str) -> str:
-    """Hash a password using bcrypt."""
-    return bcrypt.hashpw(password.encode('utf-8'), bcrypt.gensalt()).decode('utf-8')
+conn = sqlite3.connect('ap_database.db', check_same_thread=False)
+c = conn.cursor()
 
+c.execute("""
+CREATE TABLE IF NOT EXISTS invoices(
+id INTEGER PRIMARY KEY AUTOINCREMENT,
+invoice_no TEXT,
+vendor_name TEXT,
+invoice_date TEXT,
+amount REAL,
+po_number TEXT,
+status TEXT,
+approval_status TEXT,
+uploaded_by TEXT,
+upload_date TEXT,
+comments TEXT
+)
+""")
 
-def verify_password(password: str, hashed: str) -> bool:
-    """Verify a password against its hash."""
-    return bcrypt.checkpw(password.encode('utf-8'), hashed.encode('utf-8'))
+c.execute("""
+CREATE TABLE IF NOT EXISTS audit_log(
+id INTEGER PRIMARY KEY AUTOINCREMENT,
+action TEXT,
+action_date TEXT
+)
+""")
 
+conn.commit()
 
-def create_user(
-    db: Session,
-    username: str,
-    email: str,
-    password: str,
-    full_name: str,
-    role: UserRole = UserRole.VIEWER,
-    department: str = None,
-    approval_limit: float = 0.0
-) -> User:
-    """Create a new user."""
-    user = User(
-        username=username,
-        email=email,
-        password_hash=hash_password(password),
-        full_name=full_name,
-        role=role,
-        department=department,
-        approval_limit=approval_limit
+# ---------------------------------
+# FUNCTIONS
+# ---------------------------------
+
+def add_invoice(invoice_no,vendor_name,invoice_date,amount,po_number,uploaded_by):
+
+    c.execute("""
+    SELECT * FROM invoices
+    WHERE invoice_no=?
+    """,(invoice_no,))
+
+    duplicate = c.fetchone()
+
+    if duplicate:
+        return False
+
+    c.execute("""
+    INSERT INTO invoices(
+    invoice_no,
+    vendor_name,
+    invoice_date,
+    amount,
+    po_number,
+    status,
+    approval_status,
+    uploaded_by,
+    upload_date,
+    comments
     )
-    db.add(user)
-    db.commit()
-    db.refresh(user)
-    return user
+    VALUES(?,?,?,?,?,?,?,?,?,?)
+    """,
+    (
+        invoice_no,
+        vendor_name,
+        invoice_date,
+        amount,
+        po_number,
+        "Pending Payment",
+        "Pending Approval",
+        uploaded_by,
+        datetime.now().strftime("%Y-%m-%d %H:%M"),
+        ""
+    ))
+
+    conn.commit()
+
+    add_audit(f"Invoice Uploaded: {invoice_no}")
+
+    return True
 
 
-def authenticate_user(db: Session, username: str, password: str) -> Optional[User]:
-    """Authenticate a user by username and password."""
-    user = db.query(User).filter(User.username == username).first()
-    if user and user.is_active and verify_password(password, user.password_hash):
-        return user
-    return None
+def add_audit(action):
+
+    c.execute("""
+    INSERT INTO audit_log(action,action_date)
+    VALUES(?,?)
+    """,
+    (
+        action,
+        datetime.now().strftime("%Y-%m-%d %H:%M")
+    ))
+
+    conn.commit()
 
 
-def get_user_by_username(db: Session, username: str) -> Optional[User]:
-    """Get user by username."""
-    return db.query(User).filter(User.username == username).first()
+def get_invoices():
 
-
-def log_audit(
-    db: Session,
-    user_id: int,
-    action: str,
-    entity_type: str = None,
-    entity_id: int = None,
-    details: str = None
-):
-    """Log an audit entry."""
-    log = AuditLog(
-        user_id=user_id,
-        action=action,
-        entity_type=entity_type,
-        entity_id=entity_id,
-        details=details
+    return pd.read_sql_query(
+        "SELECT * FROM invoices",
+        conn
     )
-    db.add(log)
-    db.commit()
 
 
-def can_approve_invoice(user: User, amount: float) -> bool:
-    """Check if user can approve an invoice of given amount."""
-    if user.role == UserRole.ADMIN:
-        return True
-    if user.role == UserRole.APPROVER and amount <= user.approval_limit:
-        return True
-    return False
+def get_audit():
+
+    return pd.read_sql_query(
+        "SELECT * FROM audit_log",
+        conn
+    )
 
 
-def get_permission_level(role: UserRole) -> int:
-    """Get numeric permission level for a role."""
-    levels = {
-        UserRole.VIEWER: 1,
-        UserRole.CLERK: 2,
-        UserRole.APPROVER: 3,
-        UserRole.ADMIN: 4
-    }
-    return levels.get(role, 0)
+def approve_invoice(invoice_id):
+
+    c.execute("""
+    UPDATE invoices
+    SET approval_status='Approved'
+    WHERE id=?
+    """,(invoice_id,))
+
+    conn.commit()
+
+    add_audit(f"Invoice Approved ID {invoice_id}")
+
+
+def reject_invoice(invoice_id):
+
+    c.execute("""
+    UPDATE invoices
+    SET approval_status='Rejected'
+    WHERE id=?
+    """,(invoice_id,))
+
+    conn.commit()
+
+    add_audit(f"Invoice Rejected ID {invoice_id}")
+
+
+def mark_paid(invoice_id):
+
+    c.execute("""
+    UPDATE invoices
+    SET status='Paid'
+    WHERE id=?
+    """,(invoice_id,))
+
+    conn.commit()
+
+    add_audit(f"Invoice Paid ID {invoice_id}")
+
+
+# ---------------------------------
+# UI
+# ---------------------------------
+
+st.set_page_config(
+    page_title="Accounts Payable Tool",
+    layout="wide"
+)
+
+st.title("📊 Accounts Payable Management System")
+
+menu = st.sidebar.selectbox(
+    "Menu",
+    [
+        "Dashboard",
+        "Upload Invoice",
+        "Invoice Repository",
+        "Approval Workflow",
+        "Payment Processing",
+        "Audit Trail"
+    ]
+)
+
+# ---------------------------------
+# DASHBOARD
+# ---------------------------------
+
+if menu == "Dashboard":
+
+    df = get_invoices()
+
+    total_invoice = len(df)
+
+    total_amount = (
+        df["amount"].sum()
+        if not df.empty else 0
+    )
+
+    pending_approval = (
+        len(df[df["approval_status"]=="Pending Approval"])
+        if not df.empty else 0
+    )
+
+    pending_payment = (
+        len(df[df["status"]=="Pending Payment"])
+        if not df.empty else 0
+    )
+
+    col1,col2,col3,col4 = st.columns(4)
+
+    col1.metric("Invoices",total_invoice)
+    col2.metric("Invoice Amount",f"₹ {total_amount:,.2f}")
+    col3.metric("Pending Approval",pending_approval)
+    col4.metric("Pending Payment",pending_payment)
+
+    st.subheader("Invoice Summary")
+
+    if not df.empty:
+        st.dataframe(df,use_container_width=True)
+
+# ---------------------------------
+# UPLOAD INVOICE
+# ---------------------------------
+
+elif menu == "Upload Invoice":
+
+    st.subheader("Upload Invoice")
+
+    with st.form("invoice_form"):
+
+        invoice_no = st.text_input("Invoice Number")
+
+        vendor_name = st.text_input("Vendor Name")
+
+        invoice_date = st.date_input("Invoice Date")
+
+        amount = st.number_input(
+            "Invoice Amount",
+            min_value=0.0
+        )
+
+        po_number = st.text_input("PO Number")
+
+        uploaded_by = st.text_input("Uploaded By")
+
+        submit = st.form_submit_button("Submit")
+
+        if submit:
+
+            result = add_invoice(
+                invoice_no,
+                vendor_name,
+                str(invoice_date),
+                amount,
+                po_number,
+                uploaded_by
+            )
+
+            if result:
+                st.success("Invoice Uploaded Successfully")
+            else:
+                st.error("Duplicate Invoice Found")
+
+# ---------------------------------
+# REPOSITORY
+# ---------------------------------
+
+elif menu == "Invoice Repository":
+
+    st.subheader("Invoice Repository")
+
+    df = get_invoices()
+
+    search = st.text_input("Search Invoice/Vendor")
+
+    if search:
+        df = df[
+            df["invoice_no"].astype(str).str.contains(search,case=False)
+            |
+            df["vendor_name"].astype(str).str.contains(search,case=False)
+        ]
+
+    st.dataframe(df,use_container_width=True)
+
+# ---------------------------------
+# APPROVAL WORKFLOW
+# ---------------------------------
+
+elif menu == "Approval Workflow":
+
+    st.subheader("Approval Workflow")
+
+    df = get_invoices()
+
+    pending = df[
+        df["approval_status"]=="Pending Approval"
+    ]
+
+    st.dataframe(
+        pending,
+        use_container_width=True
+    )
+
+    invoice_id = st.number_input(
+        "Invoice ID",
+        step=1
+    )
+
+    col1,col2 = st.columns(2)
+
+    if col1.button("Approve"):
+        approve_invoice(invoice_id)
+        st.success("Approved")
+
+    if col2.button("Reject"):
+        reject_invoice(invoice_id)
+        st.error("Rejected")
+
+# ---------------------------------
+# PAYMENT PROCESSING
+# ---------------------------------
+
+elif menu == "Payment Processing":
+
+    st.subheader("Payment Processing")
+
+    df = get_invoices()
+
+    approved = df[
+        df["approval_status"]=="Approved"
+    ]
+
+    st.dataframe(
+        approved,
+        use_container_width=True
+    )
+
+    invoice_id = st.number_input(
+        "Approved Invoice ID",
+        step=1
+    )
+
+    if st.button("Mark as Paid"):
+
+        mark_paid(invoice_id)
+
+        st.success("Payment Updated")
+
+# ---------------------------------
+# AUDIT TRAIL
+# ---------------------------------
+
+elif menu == "Audit Trail":
+
+    st.subheader("Audit Trail")
+
+    audit_df = get_audit()
+
+    st.dataframe(
+        audit_df,
+        use_container_width=True
+    )
