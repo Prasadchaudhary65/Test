@@ -1,1106 +1,215 @@
 import streamlit as st
 import pandas as pd
-import sqlite3
-st.set_page_config(page_title='FinFlow Enterprise AP Suite', layout='wide')
-st.title('FinFlow Enterprise AP Suite')
-st.write('Starter enterprise AP application scaffold.')
-# Enterprise module placeholder line 1
-# Enterprise module placeholder line 2
-# Enterprise module placeholder line 3
-# Enterprise module placeholder line 4
-# Enterprise module placeholder line 5
-# Enterprise module placeholder line 6
-# Enterprise module placeholder line 7
-# Enterprise module placeholder line 8
-# Enterprise module placeholder line 9
-# Enterprise module placeholder line 10
-# Enterprise module placeholder line 11
-# Enterprise module placeholder line 12
-# Enterprise module placeholder line 13
-# Enterprise module placeholder line 14
-# Enterprise module placeholder line 15
-# Enterprise module placeholder line 16
-# Enterprise module placeholder line 17
-# Enterprise module placeholder line 18
-# Enterprise module placeholder line 19
-# Enterprise module placeholder line 20
-# Enterprise module placeholder line 21
-# Enterprise module placeholder line 22
-# Enterprise module placeholder line 23
-# Enterprise module placeholder line 24
-# Enterprise module placeholder line 25
-# Enterprise module placeholder line 26
-# Enterprise module placeholder line 27
-# Enterprise module placeholder line 28
-# Enterprise module placeholder line 29
-# Enterprise module placeholder line 30
-# Enterprise module placeholder line 31
-# Enterprise module placeholder line 32
-# Enterprise module placeholder line 33
-# Enterprise module placeholder line 34
-# Enterprise module placeholder line 35
-# Enterprise module placeholder line 36
-# Enterprise module placeholder line 37
-# Enterprise module placeholder line 38
-# Enterprise module placeholder line 39
-# Enterprise module placeholder line 40
-# Enterprise module placeholder line 41
-# Enterprise module placeholder line 42
-# Enterprise module placeholder line 43
-# Enterprise module placeholder line 44
-# Enterprise module placeholder line 45
-# Enterprise module placeholder line 46
-# Enterprise module placeholder line 47
-# Enterprise module placeholder line 48
-# Enterprise module placeholder line 49
-# Enterprise module placeholder line 50
-# Enterprise module placeholder line 51
-# Enterprise module placeholder line 52
-# Enterprise module placeholder line 53
-# Enterprise module placeholder line 54
-# Enterprise module placeholder line 55
-# Enterprise module placeholder line 56
-# Enterprise module placeholder line 57
-# Enterprise module placeholder line 58
-# Enterprise module placeholder line 59
-# Enterprise module placeholder line 60
-# Enterprise module placeholder line 61
-# Enterprise module placeholder line 62
-# Enterprise module placeholder line 63
-# Enterprise module placeholder line 64
-# Enterprise module placeholder line 65
-# Enterprise module placeholder line 66
-# Enterprise module placeholder line 67
-# Enterprise module placeholder line 68
-# Enterprise module placeholder line 69
-# Enterprise module placeholder line 70
-# Enterprise module placeholder line 71
-# Enterprise module placeholder line 72
-# Enterprise module placeholder line 73
-# Enterprise module placeholder line 74
-# Enterprise module placeholder line 75
-# Enterprise module placeholder line 76
-# Enterprise module placeholder line 77
-# Enterprise module placeholder line 78
-# Enterprise module placeholder line 79
-# Enterprise module placeholder line 80
-# Enterprise module placeholder line 81
-# Enterprise module placeholder line 82
-# Enterprise module placeholder line 83
-# Enterprise module placeholder line 84
-# Enterprise module placeholder line 85
-# Enterprise module placeholder line 86
-# Enterprise module placeholder line 87
-# Enterprise module placeholder line 88
-# Enterprise module placeholder line 89
-# Enterprise module placeholder line 90
-# Enterprise module placeholder line 91
-# Enterprise module placeholder line 92
-# Enterprise module placeholder line 93
-# Enterprise module placeholder line 94
-# Enterprise module placeholder line 95
-# Enterprise module placeholder line 96
-# Enterprise module placeholder line 97
-# Enterprise module placeholder line 98
-# Enterprise module placeholder line 99
-# Enterprise module placeholder line 100
-# Enterprise module placeholder line 101
-# Enterprise module placeholder line 102
-# Enterprise module placeholder line 103
-# Enterprise module placeholder line 104
-# Enterprise module placeholder line 105
-# Enterprise module placeholder line 106
-# Enterprise module placeholder line 107
-# Enterprise module placeholder line 108
-# Enterprise module placeholder line 109
-# Enterprise module placeholder line 110
-# Enterprise module placeholder line 111
-# Enterprise module placeholder line 112
-# Enterprise module placeholder line 113
-# Enterprise module placeholder line 114
-# Enterprise module placeholder line 115
-# Enterprise module placeholder line 116
-# Enterprise module placeholder line 117
-# Enterprise module placeholder line 118
-# Enterprise module placeholder line 119
-# Enterprise module placeholder line 120
-# Enterprise module placeholder line 121
-# Enterprise module placeholder line 122
-# Enterprise module placeholder line 123
-# Enterprise module placeholder line 124
-# Enterprise module placeholder line 125
-# Enterprise module placeholder line 126
-# Enterprise module placeholder line 127
-# Enterprise module placeholder line 128
-# Enterprise module placeholder line 129
-# Enterprise module placeholder line 130
-# Enterprise module placeholder line 131
-# Enterprise module placeholder line 132
-# Enterprise module placeholder line 133
-# Enterprise module placeholder line 134
-# Enterprise module placeholder line 135
-# Enterprise module placeholder line 136
-# Enterprise module placeholder line 137
-# Enterprise module placeholder line 138
-# Enterprise module placeholder line 139
-# Enterprise module placeholder line 140
-# Enterprise module placeholder line 141
-# Enterprise module placeholder line 142
-# Enterprise module placeholder line 143
-# Enterprise module placeholder line 144
-# Enterprise module placeholder line 145
-# Enterprise module placeholder line 146
-# Enterprise module placeholder line 147
-# Enterprise module placeholder line 148
-# Enterprise module placeholder line 149
-# Enterprise module placeholder line 150
-# Enterprise module placeholder line 151
-# Enterprise module placeholder line 152
-# Enterprise module placeholder line 153
-# Enterprise module placeholder line 154
-# Enterprise module placeholder line 155
-# Enterprise module placeholder line 156
-# Enterprise module placeholder line 157
-# Enterprise module placeholder line 158
-# Enterprise module placeholder line 159
-# Enterprise module placeholder line 160
-# Enterprise module placeholder line 161
-# Enterprise module placeholder line 162
-# Enterprise module placeholder line 163
-# Enterprise module placeholder line 164
-# Enterprise module placeholder line 165
-# Enterprise module placeholder line 166
-# Enterprise module placeholder line 167
-# Enterprise module placeholder line 168
-# Enterprise module placeholder line 169
-# Enterprise module placeholder line 170
-# Enterprise module placeholder line 171
-# Enterprise module placeholder line 172
-# Enterprise module placeholder line 173
-# Enterprise module placeholder line 174
-# Enterprise module placeholder line 175
-# Enterprise module placeholder line 176
-# Enterprise module placeholder line 177
-# Enterprise module placeholder line 178
-# Enterprise module placeholder line 179
-# Enterprise module placeholder line 180
-# Enterprise module placeholder line 181
-# Enterprise module placeholder line 182
-# Enterprise module placeholder line 183
-# Enterprise module placeholder line 184
-# Enterprise module placeholder line 185
-# Enterprise module placeholder line 186
-# Enterprise module placeholder line 187
-# Enterprise module placeholder line 188
-# Enterprise module placeholder line 189
-# Enterprise module placeholder line 190
-# Enterprise module placeholder line 191
-# Enterprise module placeholder line 192
-# Enterprise module placeholder line 193
-# Enterprise module placeholder line 194
-# Enterprise module placeholder line 195
-# Enterprise module placeholder line 196
-# Enterprise module placeholder line 197
-# Enterprise module placeholder line 198
-# Enterprise module placeholder line 199
-# Enterprise module placeholder line 200
-# Enterprise module placeholder line 201
-# Enterprise module placeholder line 202
-# Enterprise module placeholder line 203
-# Enterprise module placeholder line 204
-# Enterprise module placeholder line 205
-# Enterprise module placeholder line 206
-# Enterprise module placeholder line 207
-# Enterprise module placeholder line 208
-# Enterprise module placeholder line 209
-# Enterprise module placeholder line 210
-# Enterprise module placeholder line 211
-# Enterprise module placeholder line 212
-# Enterprise module placeholder line 213
-# Enterprise module placeholder line 214
-# Enterprise module placeholder line 215
-# Enterprise module placeholder line 216
-# Enterprise module placeholder line 217
-# Enterprise module placeholder line 218
-# Enterprise module placeholder line 219
-# Enterprise module placeholder line 220
-# Enterprise module placeholder line 221
-# Enterprise module placeholder line 222
-# Enterprise module placeholder line 223
-# Enterprise module placeholder line 224
-# Enterprise module placeholder line 225
-# Enterprise module placeholder line 226
-# Enterprise module placeholder line 227
-# Enterprise module placeholder line 228
-# Enterprise module placeholder line 229
-# Enterprise module placeholder line 230
-# Enterprise module placeholder line 231
-# Enterprise module placeholder line 232
-# Enterprise module placeholder line 233
-# Enterprise module placeholder line 234
-# Enterprise module placeholder line 235
-# Enterprise module placeholder line 236
-# Enterprise module placeholder line 237
-# Enterprise module placeholder line 238
-# Enterprise module placeholder line 239
-# Enterprise module placeholder line 240
-# Enterprise module placeholder line 241
-# Enterprise module placeholder line 242
-# Enterprise module placeholder line 243
-# Enterprise module placeholder line 244
-# Enterprise module placeholder line 245
-# Enterprise module placeholder line 246
-# Enterprise module placeholder line 247
-# Enterprise module placeholder line 248
-# Enterprise module placeholder line 249
-# Enterprise module placeholder line 250
-# Enterprise module placeholder line 251
-# Enterprise module placeholder line 252
-# Enterprise module placeholder line 253
-# Enterprise module placeholder line 254
-# Enterprise module placeholder line 255
-# Enterprise module placeholder line 256
-# Enterprise module placeholder line 257
-# Enterprise module placeholder line 258
-# Enterprise module placeholder line 259
-# Enterprise module placeholder line 260
-# Enterprise module placeholder line 261
-# Enterprise module placeholder line 262
-# Enterprise module placeholder line 263
-# Enterprise module placeholder line 264
-# Enterprise module placeholder line 265
-# Enterprise module placeholder line 266
-# Enterprise module placeholder line 267
-# Enterprise module placeholder line 268
-# Enterprise module placeholder line 269
-# Enterprise module placeholder line 270
-# Enterprise module placeholder line 271
-# Enterprise module placeholder line 272
-# Enterprise module placeholder line 273
-# Enterprise module placeholder line 274
-# Enterprise module placeholder line 275
-# Enterprise module placeholder line 276
-# Enterprise module placeholder line 277
-# Enterprise module placeholder line 278
-# Enterprise module placeholder line 279
-# Enterprise module placeholder line 280
-# Enterprise module placeholder line 281
-# Enterprise module placeholder line 282
-# Enterprise module placeholder line 283
-# Enterprise module placeholder line 284
-# Enterprise module placeholder line 285
-# Enterprise module placeholder line 286
-# Enterprise module placeholder line 287
-# Enterprise module placeholder line 288
-# Enterprise module placeholder line 289
-# Enterprise module placeholder line 290
-# Enterprise module placeholder line 291
-# Enterprise module placeholder line 292
-# Enterprise module placeholder line 293
-# Enterprise module placeholder line 294
-# Enterprise module placeholder line 295
-# Enterprise module placeholder line 296
-# Enterprise module placeholder line 297
-# Enterprise module placeholder line 298
-# Enterprise module placeholder line 299
-# Enterprise module placeholder line 300
-# Enterprise module placeholder line 301
-# Enterprise module placeholder line 302
-# Enterprise module placeholder line 303
-# Enterprise module placeholder line 304
-# Enterprise module placeholder line 305
-# Enterprise module placeholder line 306
-# Enterprise module placeholder line 307
-# Enterprise module placeholder line 308
-# Enterprise module placeholder line 309
-# Enterprise module placeholder line 310
-# Enterprise module placeholder line 311
-# Enterprise module placeholder line 312
-# Enterprise module placeholder line 313
-# Enterprise module placeholder line 314
-# Enterprise module placeholder line 315
-# Enterprise module placeholder line 316
-# Enterprise module placeholder line 317
-# Enterprise module placeholder line 318
-# Enterprise module placeholder line 319
-# Enterprise module placeholder line 320
-# Enterprise module placeholder line 321
-# Enterprise module placeholder line 322
-# Enterprise module placeholder line 323
-# Enterprise module placeholder line 324
-# Enterprise module placeholder line 325
-# Enterprise module placeholder line 326
-# Enterprise module placeholder line 327
-# Enterprise module placeholder line 328
-# Enterprise module placeholder line 329
-# Enterprise module placeholder line 330
-# Enterprise module placeholder line 331
-# Enterprise module placeholder line 332
-# Enterprise module placeholder line 333
-# Enterprise module placeholder line 334
-# Enterprise module placeholder line 335
-# Enterprise module placeholder line 336
-# Enterprise module placeholder line 337
-# Enterprise module placeholder line 338
-# Enterprise module placeholder line 339
-# Enterprise module placeholder line 340
-# Enterprise module placeholder line 341
-# Enterprise module placeholder line 342
-# Enterprise module placeholder line 343
-# Enterprise module placeholder line 344
-# Enterprise module placeholder line 345
-# Enterprise module placeholder line 346
-# Enterprise module placeholder line 347
-# Enterprise module placeholder line 348
-# Enterprise module placeholder line 349
-# Enterprise module placeholder line 350
-# Enterprise module placeholder line 351
-# Enterprise module placeholder line 352
-# Enterprise module placeholder line 353
-# Enterprise module placeholder line 354
-# Enterprise module placeholder line 355
-# Enterprise module placeholder line 356
-# Enterprise module placeholder line 357
-# Enterprise module placeholder line 358
-# Enterprise module placeholder line 359
-# Enterprise module placeholder line 360
-# Enterprise module placeholder line 361
-# Enterprise module placeholder line 362
-# Enterprise module placeholder line 363
-# Enterprise module placeholder line 364
-# Enterprise module placeholder line 365
-# Enterprise module placeholder line 366
-# Enterprise module placeholder line 367
-# Enterprise module placeholder line 368
-# Enterprise module placeholder line 369
-# Enterprise module placeholder line 370
-# Enterprise module placeholder line 371
-# Enterprise module placeholder line 372
-# Enterprise module placeholder line 373
-# Enterprise module placeholder line 374
-# Enterprise module placeholder line 375
-# Enterprise module placeholder line 376
-# Enterprise module placeholder line 377
-# Enterprise module placeholder line 378
-# Enterprise module placeholder line 379
-# Enterprise module placeholder line 380
-# Enterprise module placeholder line 381
-# Enterprise module placeholder line 382
-# Enterprise module placeholder line 383
-# Enterprise module placeholder line 384
-# Enterprise module placeholder line 385
-# Enterprise module placeholder line 386
-# Enterprise module placeholder line 387
-# Enterprise module placeholder line 388
-# Enterprise module placeholder line 389
-# Enterprise module placeholder line 390
-# Enterprise module placeholder line 391
-# Enterprise module placeholder line 392
-# Enterprise module placeholder line 393
-# Enterprise module placeholder line 394
-# Enterprise module placeholder line 395
-# Enterprise module placeholder line 396
-# Enterprise module placeholder line 397
-# Enterprise module placeholder line 398
-# Enterprise module placeholder line 399
-# Enterprise module placeholder line 400
-# Enterprise module placeholder line 401
-# Enterprise module placeholder line 402
-# Enterprise module placeholder line 403
-# Enterprise module placeholder line 404
-# Enterprise module placeholder line 405
-# Enterprise module placeholder line 406
-# Enterprise module placeholder line 407
-# Enterprise module placeholder line 408
-# Enterprise module placeholder line 409
-# Enterprise module placeholder line 410
-# Enterprise module placeholder line 411
-# Enterprise module placeholder line 412
-# Enterprise module placeholder line 413
-# Enterprise module placeholder line 414
-# Enterprise module placeholder line 415
-# Enterprise module placeholder line 416
-# Enterprise module placeholder line 417
-# Enterprise module placeholder line 418
-# Enterprise module placeholder line 419
-# Enterprise module placeholder line 420
-# Enterprise module placeholder line 421
-# Enterprise module placeholder line 422
-# Enterprise module placeholder line 423
-# Enterprise module placeholder line 424
-# Enterprise module placeholder line 425
-# Enterprise module placeholder line 426
-# Enterprise module placeholder line 427
-# Enterprise module placeholder line 428
-# Enterprise module placeholder line 429
-# Enterprise module placeholder line 430
-# Enterprise module placeholder line 431
-# Enterprise module placeholder line 432
-# Enterprise module placeholder line 433
-# Enterprise module placeholder line 434
-# Enterprise module placeholder line 435
-# Enterprise module placeholder line 436
-# Enterprise module placeholder line 437
-# Enterprise module placeholder line 438
-# Enterprise module placeholder line 439
-# Enterprise module placeholder line 440
-# Enterprise module placeholder line 441
-# Enterprise module placeholder line 442
-# Enterprise module placeholder line 443
-# Enterprise module placeholder line 444
-# Enterprise module placeholder line 445
-# Enterprise module placeholder line 446
-# Enterprise module placeholder line 447
-# Enterprise module placeholder line 448
-# Enterprise module placeholder line 449
-# Enterprise module placeholder line 450
-# Enterprise module placeholder line 451
-# Enterprise module placeholder line 452
-# Enterprise module placeholder line 453
-# Enterprise module placeholder line 454
-# Enterprise module placeholder line 455
-# Enterprise module placeholder line 456
-# Enterprise module placeholder line 457
-# Enterprise module placeholder line 458
-# Enterprise module placeholder line 459
-# Enterprise module placeholder line 460
-# Enterprise module placeholder line 461
-# Enterprise module placeholder line 462
-# Enterprise module placeholder line 463
-# Enterprise module placeholder line 464
-# Enterprise module placeholder line 465
-# Enterprise module placeholder line 466
-# Enterprise module placeholder line 467
-# Enterprise module placeholder line 468
-# Enterprise module placeholder line 469
-# Enterprise module placeholder line 470
-# Enterprise module placeholder line 471
-# Enterprise module placeholder line 472
-# Enterprise module placeholder line 473
-# Enterprise module placeholder line 474
-# Enterprise module placeholder line 475
-# Enterprise module placeholder line 476
-# Enterprise module placeholder line 477
-# Enterprise module placeholder line 478
-# Enterprise module placeholder line 479
-# Enterprise module placeholder line 480
-# Enterprise module placeholder line 481
-# Enterprise module placeholder line 482
-# Enterprise module placeholder line 483
-# Enterprise module placeholder line 484
-# Enterprise module placeholder line 485
-# Enterprise module placeholder line 486
-# Enterprise module placeholder line 487
-# Enterprise module placeholder line 488
-# Enterprise module placeholder line 489
-# Enterprise module placeholder line 490
-# Enterprise module placeholder line 491
-# Enterprise module placeholder line 492
-# Enterprise module placeholder line 493
-# Enterprise module placeholder line 494
-# Enterprise module placeholder line 495
-# Enterprise module placeholder line 496
-# Enterprise module placeholder line 497
-# Enterprise module placeholder line 498
-# Enterprise module placeholder line 499
-# Enterprise module placeholder line 500
-# Enterprise module placeholder line 501
-# Enterprise module placeholder line 502
-# Enterprise module placeholder line 503
-# Enterprise module placeholder line 504
-# Enterprise module placeholder line 505
-# Enterprise module placeholder line 506
-# Enterprise module placeholder line 507
-# Enterprise module placeholder line 508
-# Enterprise module placeholder line 509
-# Enterprise module placeholder line 510
-# Enterprise module placeholder line 511
-# Enterprise module placeholder line 512
-# Enterprise module placeholder line 513
-# Enterprise module placeholder line 514
-# Enterprise module placeholder line 515
-# Enterprise module placeholder line 516
-# Enterprise module placeholder line 517
-# Enterprise module placeholder line 518
-# Enterprise module placeholder line 519
-# Enterprise module placeholder line 520
-# Enterprise module placeholder line 521
-# Enterprise module placeholder line 522
-# Enterprise module placeholder line 523
-# Enterprise module placeholder line 524
-# Enterprise module placeholder line 525
-# Enterprise module placeholder line 526
-# Enterprise module placeholder line 527
-# Enterprise module placeholder line 528
-# Enterprise module placeholder line 529
-# Enterprise module placeholder line 530
-# Enterprise module placeholder line 531
-# Enterprise module placeholder line 532
-# Enterprise module placeholder line 533
-# Enterprise module placeholder line 534
-# Enterprise module placeholder line 535
-# Enterprise module placeholder line 536
-# Enterprise module placeholder line 537
-# Enterprise module placeholder line 538
-# Enterprise module placeholder line 539
-# Enterprise module placeholder line 540
-# Enterprise module placeholder line 541
-# Enterprise module placeholder line 542
-# Enterprise module placeholder line 543
-# Enterprise module placeholder line 544
-# Enterprise module placeholder line 545
-# Enterprise module placeholder line 546
-# Enterprise module placeholder line 547
-# Enterprise module placeholder line 548
-# Enterprise module placeholder line 549
-# Enterprise module placeholder line 550
-# Enterprise module placeholder line 551
-# Enterprise module placeholder line 552
-# Enterprise module placeholder line 553
-# Enterprise module placeholder line 554
-# Enterprise module placeholder line 555
-# Enterprise module placeholder line 556
-# Enterprise module placeholder line 557
-# Enterprise module placeholder line 558
-# Enterprise module placeholder line 559
-# Enterprise module placeholder line 560
-# Enterprise module placeholder line 561
-# Enterprise module placeholder line 562
-# Enterprise module placeholder line 563
-# Enterprise module placeholder line 564
-# Enterprise module placeholder line 565
-# Enterprise module placeholder line 566
-# Enterprise module placeholder line 567
-# Enterprise module placeholder line 568
-# Enterprise module placeholder line 569
-# Enterprise module placeholder line 570
-# Enterprise module placeholder line 571
-# Enterprise module placeholder line 572
-# Enterprise module placeholder line 573
-# Enterprise module placeholder line 574
-# Enterprise module placeholder line 575
-# Enterprise module placeholder line 576
-# Enterprise module placeholder line 577
-# Enterprise module placeholder line 578
-# Enterprise module placeholder line 579
-# Enterprise module placeholder line 580
-# Enterprise module placeholder line 581
-# Enterprise module placeholder line 582
-# Enterprise module placeholder line 583
-# Enterprise module placeholder line 584
-# Enterprise module placeholder line 585
-# Enterprise module placeholder line 586
-# Enterprise module placeholder line 587
-# Enterprise module placeholder line 588
-# Enterprise module placeholder line 589
-# Enterprise module placeholder line 590
-# Enterprise module placeholder line 591
-# Enterprise module placeholder line 592
-# Enterprise module placeholder line 593
-# Enterprise module placeholder line 594
-# Enterprise module placeholder line 595
-# Enterprise module placeholder line 596
-# Enterprise module placeholder line 597
-# Enterprise module placeholder line 598
-# Enterprise module placeholder line 599
-# Enterprise module placeholder line 600
-# Enterprise module placeholder line 601
-# Enterprise module placeholder line 602
-# Enterprise module placeholder line 603
-# Enterprise module placeholder line 604
-# Enterprise module placeholder line 605
-# Enterprise module placeholder line 606
-# Enterprise module placeholder line 607
-# Enterprise module placeholder line 608
-# Enterprise module placeholder line 609
-# Enterprise module placeholder line 610
-# Enterprise module placeholder line 611
-# Enterprise module placeholder line 612
-# Enterprise module placeholder line 613
-# Enterprise module placeholder line 614
-# Enterprise module placeholder line 615
-# Enterprise module placeholder line 616
-# Enterprise module placeholder line 617
-# Enterprise module placeholder line 618
-# Enterprise module placeholder line 619
-# Enterprise module placeholder line 620
-# Enterprise module placeholder line 621
-# Enterprise module placeholder line 622
-# Enterprise module placeholder line 623
-# Enterprise module placeholder line 624
-# Enterprise module placeholder line 625
-# Enterprise module placeholder line 626
-# Enterprise module placeholder line 627
-# Enterprise module placeholder line 628
-# Enterprise module placeholder line 629
-# Enterprise module placeholder line 630
-# Enterprise module placeholder line 631
-# Enterprise module placeholder line 632
-# Enterprise module placeholder line 633
-# Enterprise module placeholder line 634
-# Enterprise module placeholder line 635
-# Enterprise module placeholder line 636
-# Enterprise module placeholder line 637
-# Enterprise module placeholder line 638
-# Enterprise module placeholder line 639
-# Enterprise module placeholder line 640
-# Enterprise module placeholder line 641
-# Enterprise module placeholder line 642
-# Enterprise module placeholder line 643
-# Enterprise module placeholder line 644
-# Enterprise module placeholder line 645
-# Enterprise module placeholder line 646
-# Enterprise module placeholder line 647
-# Enterprise module placeholder line 648
-# Enterprise module placeholder line 649
-# Enterprise module placeholder line 650
-# Enterprise module placeholder line 651
-# Enterprise module placeholder line 652
-# Enterprise module placeholder line 653
-# Enterprise module placeholder line 654
-# Enterprise module placeholder line 655
-# Enterprise module placeholder line 656
-# Enterprise module placeholder line 657
-# Enterprise module placeholder line 658
-# Enterprise module placeholder line 659
-# Enterprise module placeholder line 660
-# Enterprise module placeholder line 661
-# Enterprise module placeholder line 662
-# Enterprise module placeholder line 663
-# Enterprise module placeholder line 664
-# Enterprise module placeholder line 665
-# Enterprise module placeholder line 666
-# Enterprise module placeholder line 667
-# Enterprise module placeholder line 668
-# Enterprise module placeholder line 669
-# Enterprise module placeholder line 670
-# Enterprise module placeholder line 671
-# Enterprise module placeholder line 672
-# Enterprise module placeholder line 673
-# Enterprise module placeholder line 674
-# Enterprise module placeholder line 675
-# Enterprise module placeholder line 676
-# Enterprise module placeholder line 677
-# Enterprise module placeholder line 678
-# Enterprise module placeholder line 679
-# Enterprise module placeholder line 680
-# Enterprise module placeholder line 681
-# Enterprise module placeholder line 682
-# Enterprise module placeholder line 683
-# Enterprise module placeholder line 684
-# Enterprise module placeholder line 685
-# Enterprise module placeholder line 686
-# Enterprise module placeholder line 687
-# Enterprise module placeholder line 688
-# Enterprise module placeholder line 689
-# Enterprise module placeholder line 690
-# Enterprise module placeholder line 691
-# Enterprise module placeholder line 692
-# Enterprise module placeholder line 693
-# Enterprise module placeholder line 694
-# Enterprise module placeholder line 695
-# Enterprise module placeholder line 696
-# Enterprise module placeholder line 697
-# Enterprise module placeholder line 698
-# Enterprise module placeholder line 699
-# Enterprise module placeholder line 700
-# Enterprise module placeholder line 701
-# Enterprise module placeholder line 702
-# Enterprise module placeholder line 703
-# Enterprise module placeholder line 704
-# Enterprise module placeholder line 705
-# Enterprise module placeholder line 706
-# Enterprise module placeholder line 707
-# Enterprise module placeholder line 708
-# Enterprise module placeholder line 709
-# Enterprise module placeholder line 710
-# Enterprise module placeholder line 711
-# Enterprise module placeholder line 712
-# Enterprise module placeholder line 713
-# Enterprise module placeholder line 714
-# Enterprise module placeholder line 715
-# Enterprise module placeholder line 716
-# Enterprise module placeholder line 717
-# Enterprise module placeholder line 718
-# Enterprise module placeholder line 719
-# Enterprise module placeholder line 720
-# Enterprise module placeholder line 721
-# Enterprise module placeholder line 722
-# Enterprise module placeholder line 723
-# Enterprise module placeholder line 724
-# Enterprise module placeholder line 725
-# Enterprise module placeholder line 726
-# Enterprise module placeholder line 727
-# Enterprise module placeholder line 728
-# Enterprise module placeholder line 729
-# Enterprise module placeholder line 730
-# Enterprise module placeholder line 731
-# Enterprise module placeholder line 732
-# Enterprise module placeholder line 733
-# Enterprise module placeholder line 734
-# Enterprise module placeholder line 735
-# Enterprise module placeholder line 736
-# Enterprise module placeholder line 737
-# Enterprise module placeholder line 738
-# Enterprise module placeholder line 739
-# Enterprise module placeholder line 740
-# Enterprise module placeholder line 741
-# Enterprise module placeholder line 742
-# Enterprise module placeholder line 743
-# Enterprise module placeholder line 744
-# Enterprise module placeholder line 745
-# Enterprise module placeholder line 746
-# Enterprise module placeholder line 747
-# Enterprise module placeholder line 748
-# Enterprise module placeholder line 749
-# Enterprise module placeholder line 750
-# Enterprise module placeholder line 751
-# Enterprise module placeholder line 752
-# Enterprise module placeholder line 753
-# Enterprise module placeholder line 754
-# Enterprise module placeholder line 755
-# Enterprise module placeholder line 756
-# Enterprise module placeholder line 757
-# Enterprise module placeholder line 758
-# Enterprise module placeholder line 759
-# Enterprise module placeholder line 760
-# Enterprise module placeholder line 761
-# Enterprise module placeholder line 762
-# Enterprise module placeholder line 763
-# Enterprise module placeholder line 764
-# Enterprise module placeholder line 765
-# Enterprise module placeholder line 766
-# Enterprise module placeholder line 767
-# Enterprise module placeholder line 768
-# Enterprise module placeholder line 769
-# Enterprise module placeholder line 770
-# Enterprise module placeholder line 771
-# Enterprise module placeholder line 772
-# Enterprise module placeholder line 773
-# Enterprise module placeholder line 774
-# Enterprise module placeholder line 775
-# Enterprise module placeholder line 776
-# Enterprise module placeholder line 777
-# Enterprise module placeholder line 778
-# Enterprise module placeholder line 779
-# Enterprise module placeholder line 780
-# Enterprise module placeholder line 781
-# Enterprise module placeholder line 782
-# Enterprise module placeholder line 783
-# Enterprise module placeholder line 784
-# Enterprise module placeholder line 785
-# Enterprise module placeholder line 786
-# Enterprise module placeholder line 787
-# Enterprise module placeholder line 788
-# Enterprise module placeholder line 789
-# Enterprise module placeholder line 790
-# Enterprise module placeholder line 791
-# Enterprise module placeholder line 792
-# Enterprise module placeholder line 793
-# Enterprise module placeholder line 794
-# Enterprise module placeholder line 795
-# Enterprise module placeholder line 796
-# Enterprise module placeholder line 797
-# Enterprise module placeholder line 798
-# Enterprise module placeholder line 799
-# Enterprise module placeholder line 800
-# Enterprise module placeholder line 801
-# Enterprise module placeholder line 802
-# Enterprise module placeholder line 803
-# Enterprise module placeholder line 804
-# Enterprise module placeholder line 805
-# Enterprise module placeholder line 806
-# Enterprise module placeholder line 807
-# Enterprise module placeholder line 808
-# Enterprise module placeholder line 809
-# Enterprise module placeholder line 810
-# Enterprise module placeholder line 811
-# Enterprise module placeholder line 812
-# Enterprise module placeholder line 813
-# Enterprise module placeholder line 814
-# Enterprise module placeholder line 815
-# Enterprise module placeholder line 816
-# Enterprise module placeholder line 817
-# Enterprise module placeholder line 818
-# Enterprise module placeholder line 819
-# Enterprise module placeholder line 820
-# Enterprise module placeholder line 821
-# Enterprise module placeholder line 822
-# Enterprise module placeholder line 823
-# Enterprise module placeholder line 824
-# Enterprise module placeholder line 825
-# Enterprise module placeholder line 826
-# Enterprise module placeholder line 827
-# Enterprise module placeholder line 828
-# Enterprise module placeholder line 829
-# Enterprise module placeholder line 830
-# Enterprise module placeholder line 831
-# Enterprise module placeholder line 832
-# Enterprise module placeholder line 833
-# Enterprise module placeholder line 834
-# Enterprise module placeholder line 835
-# Enterprise module placeholder line 836
-# Enterprise module placeholder line 837
-# Enterprise module placeholder line 838
-# Enterprise module placeholder line 839
-# Enterprise module placeholder line 840
-# Enterprise module placeholder line 841
-# Enterprise module placeholder line 842
-# Enterprise module placeholder line 843
-# Enterprise module placeholder line 844
-# Enterprise module placeholder line 845
-# Enterprise module placeholder line 846
-# Enterprise module placeholder line 847
-# Enterprise module placeholder line 848
-# Enterprise module placeholder line 849
-# Enterprise module placeholder line 850
-# Enterprise module placeholder line 851
-# Enterprise module placeholder line 852
-# Enterprise module placeholder line 853
-# Enterprise module placeholder line 854
-# Enterprise module placeholder line 855
-# Enterprise module placeholder line 856
-# Enterprise module placeholder line 857
-# Enterprise module placeholder line 858
-# Enterprise module placeholder line 859
-# Enterprise module placeholder line 860
-# Enterprise module placeholder line 861
-# Enterprise module placeholder line 862
-# Enterprise module placeholder line 863
-# Enterprise module placeholder line 864
-# Enterprise module placeholder line 865
-# Enterprise module placeholder line 866
-# Enterprise module placeholder line 867
-# Enterprise module placeholder line 868
-# Enterprise module placeholder line 869
-# Enterprise module placeholder line 870
-# Enterprise module placeholder line 871
-# Enterprise module placeholder line 872
-# Enterprise module placeholder line 873
-# Enterprise module placeholder line 874
-# Enterprise module placeholder line 875
-# Enterprise module placeholder line 876
-# Enterprise module placeholder line 877
-# Enterprise module placeholder line 878
-# Enterprise module placeholder line 879
-# Enterprise module placeholder line 880
-# Enterprise module placeholder line 881
-# Enterprise module placeholder line 882
-# Enterprise module placeholder line 883
-# Enterprise module placeholder line 884
-# Enterprise module placeholder line 885
-# Enterprise module placeholder line 886
-# Enterprise module placeholder line 887
-# Enterprise module placeholder line 888
-# Enterprise module placeholder line 889
-# Enterprise module placeholder line 890
-# Enterprise module placeholder line 891
-# Enterprise module placeholder line 892
-# Enterprise module placeholder line 893
-# Enterprise module placeholder line 894
-# Enterprise module placeholder line 895
-# Enterprise module placeholder line 896
-# Enterprise module placeholder line 897
-# Enterprise module placeholder line 898
-# Enterprise module placeholder line 899
-# Enterprise module placeholder line 900
-# Enterprise module placeholder line 901
-# Enterprise module placeholder line 902
-# Enterprise module placeholder line 903
-# Enterprise module placeholder line 904
-# Enterprise module placeholder line 905
-# Enterprise module placeholder line 906
-# Enterprise module placeholder line 907
-# Enterprise module placeholder line 908
-# Enterprise module placeholder line 909
-# Enterprise module placeholder line 910
-# Enterprise module placeholder line 911
-# Enterprise module placeholder line 912
-# Enterprise module placeholder line 913
-# Enterprise module placeholder line 914
-# Enterprise module placeholder line 915
-# Enterprise module placeholder line 916
-# Enterprise module placeholder line 917
-# Enterprise module placeholder line 918
-# Enterprise module placeholder line 919
-# Enterprise module placeholder line 920
-# Enterprise module placeholder line 921
-# Enterprise module placeholder line 922
-# Enterprise module placeholder line 923
-# Enterprise module placeholder line 924
-# Enterprise module placeholder line 925
-# Enterprise module placeholder line 926
-# Enterprise module placeholder line 927
-# Enterprise module placeholder line 928
-# Enterprise module placeholder line 929
-# Enterprise module placeholder line 930
-# Enterprise module placeholder line 931
-# Enterprise module placeholder line 932
-# Enterprise module placeholder line 933
-# Enterprise module placeholder line 934
-# Enterprise module placeholder line 935
-# Enterprise module placeholder line 936
-# Enterprise module placeholder line 937
-# Enterprise module placeholder line 938
-# Enterprise module placeholder line 939
-# Enterprise module placeholder line 940
-# Enterprise module placeholder line 941
-# Enterprise module placeholder line 942
-# Enterprise module placeholder line 943
-# Enterprise module placeholder line 944
-# Enterprise module placeholder line 945
-# Enterprise module placeholder line 946
-# Enterprise module placeholder line 947
-# Enterprise module placeholder line 948
-# Enterprise module placeholder line 949
-# Enterprise module placeholder line 950
-# Enterprise module placeholder line 951
-# Enterprise module placeholder line 952
-# Enterprise module placeholder line 953
-# Enterprise module placeholder line 954
-# Enterprise module placeholder line 955
-# Enterprise module placeholder line 956
-# Enterprise module placeholder line 957
-# Enterprise module placeholder line 958
-# Enterprise module placeholder line 959
-# Enterprise module placeholder line 960
-# Enterprise module placeholder line 961
-# Enterprise module placeholder line 962
-# Enterprise module placeholder line 963
-# Enterprise module placeholder line 964
-# Enterprise module placeholder line 965
-# Enterprise module placeholder line 966
-# Enterprise module placeholder line 967
-# Enterprise module placeholder line 968
-# Enterprise module placeholder line 969
-# Enterprise module placeholder line 970
-# Enterprise module placeholder line 971
-# Enterprise module placeholder line 972
-# Enterprise module placeholder line 973
-# Enterprise module placeholder line 974
-# Enterprise module placeholder line 975
-# Enterprise module placeholder line 976
-# Enterprise module placeholder line 977
-# Enterprise module placeholder line 978
-# Enterprise module placeholder line 979
-# Enterprise module placeholder line 980
-# Enterprise module placeholder line 981
-# Enterprise module placeholder line 982
-# Enterprise module placeholder line 983
-# Enterprise module placeholder line 984
-# Enterprise module placeholder line 985
-# Enterprise module placeholder line 986
-# Enterprise module placeholder line 987
-# Enterprise module placeholder line 988
-# Enterprise module placeholder line 989
-# Enterprise module placeholder line 990
-# Enterprise module placeholder line 991
-# Enterprise module placeholder line 992
-# Enterprise module placeholder line 993
-# Enterprise module placeholder line 994
-# Enterprise module placeholder line 995
-# Enterprise module placeholder line 996
-# Enterprise module placeholder line 997
-# Enterprise module placeholder line 998
-# Enterprise module placeholder line 999
-# Enterprise module placeholder line 1000
-# Enterprise module placeholder line 1001
-# Enterprise module placeholder line 1002
-# Enterprise module placeholder line 1003
-# Enterprise module placeholder line 1004
-# Enterprise module placeholder line 1005
-# Enterprise module placeholder line 1006
-# Enterprise module placeholder line 1007
-# Enterprise module placeholder line 1008
-# Enterprise module placeholder line 1009
-# Enterprise module placeholder line 1010
-# Enterprise module placeholder line 1011
-# Enterprise module placeholder line 1012
-# Enterprise module placeholder line 1013
-# Enterprise module placeholder line 1014
-# Enterprise module placeholder line 1015
-# Enterprise module placeholder line 1016
-# Enterprise module placeholder line 1017
-# Enterprise module placeholder line 1018
-# Enterprise module placeholder line 1019
-# Enterprise module placeholder line 1020
-# Enterprise module placeholder line 1021
-# Enterprise module placeholder line 1022
-# Enterprise module placeholder line 1023
-# Enterprise module placeholder line 1024
-# Enterprise module placeholder line 1025
-# Enterprise module placeholder line 1026
-# Enterprise module placeholder line 1027
-# Enterprise module placeholder line 1028
-# Enterprise module placeholder line 1029
-# Enterprise module placeholder line 1030
-# Enterprise module placeholder line 1031
-# Enterprise module placeholder line 1032
-# Enterprise module placeholder line 1033
-# Enterprise module placeholder line 1034
-# Enterprise module placeholder line 1035
-# Enterprise module placeholder line 1036
-# Enterprise module placeholder line 1037
-# Enterprise module placeholder line 1038
-# Enterprise module placeholder line 1039
-# Enterprise module placeholder line 1040
-# Enterprise module placeholder line 1041
-# Enterprise module placeholder line 1042
-# Enterprise module placeholder line 1043
-# Enterprise module placeholder line 1044
-# Enterprise module placeholder line 1045
-# Enterprise module placeholder line 1046
-# Enterprise module placeholder line 1047
-# Enterprise module placeholder line 1048
-# Enterprise module placeholder line 1049
-# Enterprise module placeholder line 1050
-# Enterprise module placeholder line 1051
-# Enterprise module placeholder line 1052
-# Enterprise module placeholder line 1053
-# Enterprise module placeholder line 1054
-# Enterprise module placeholder line 1055
-# Enterprise module placeholder line 1056
-# Enterprise module placeholder line 1057
-# Enterprise module placeholder line 1058
-# Enterprise module placeholder line 1059
-# Enterprise module placeholder line 1060
-# Enterprise module placeholder line 1061
-# Enterprise module placeholder line 1062
-# Enterprise module placeholder line 1063
-# Enterprise module placeholder line 1064
-# Enterprise module placeholder line 1065
-# Enterprise module placeholder line 1066
-# Enterprise module placeholder line 1067
-# Enterprise module placeholder line 1068
-# Enterprise module placeholder line 1069
-# Enterprise module placeholder line 1070
-# Enterprise module placeholder line 1071
-# Enterprise module placeholder line 1072
-# Enterprise module placeholder line 1073
-# Enterprise module placeholder line 1074
-# Enterprise module placeholder line 1075
-# Enterprise module placeholder line 1076
-# Enterprise module placeholder line 1077
-# Enterprise module placeholder line 1078
-# Enterprise module placeholder line 1079
-# Enterprise module placeholder line 1080
-# Enterprise module placeholder line 1081
-# Enterprise module placeholder line 1082
-# Enterprise module placeholder line 1083
-# Enterprise module placeholder line 1084
-# Enterprise module placeholder line 1085
-# Enterprise module placeholder line 1086
-# Enterprise module placeholder line 1087
-# Enterprise module placeholder line 1088
-# Enterprise module placeholder line 1089
-# Enterprise module placeholder line 1090
-# Enterprise module placeholder line 1091
-# Enterprise module placeholder line 1092
-# Enterprise module placeholder line 1093
-# Enterprise module placeholder line 1094
-# Enterprise module placeholder line 1095
-# Enterprise module placeholder line 1096
-# Enterprise module placeholder line 1097
-# Enterprise module placeholder line 1098
-# Enterprise module placeholder line 1099
-# Enterprise module placeholder line 1100
+import plotly.express as px
+from datetime import datetime
+
+# ---------------- PAGE CONFIG ----------------
+st.set_page_config(
+    page_title="Accounts Payable Management System",
+    page_icon="💰",
+    layout="wide"
+)
+
+# ---------------- STYLING ----------------
+st.markdown("""
+<style>
+.main {
+    background-color: #f4f7f5;
+}
+.stApp {
+    background-color: #f4f7f5;
+}
+h1,h2,h3 {
+    color: #2f4f4f;
+}
+.metric-container {
+    background-color: white;
+    padding: 15px;
+    border-radius: 10px;
+}
+div[data-testid="stSidebar"] {
+    background-color: #d8e8d8;
+}
+.stButton>button {
+    background-color: #90c695;
+    color: black;
+    border-radius: 8px;
+}
+</style>
+""", unsafe_allow_html=True)
+
+# ---------------- SAMPLE DATA ----------------
+if 'ap_data' not in st.session_state:
+    st.session_state.ap_data = pd.DataFrame({
+        "Vendor": ["ABC Ltd", "XYZ Pvt Ltd", "PQR Services"],
+        "Invoice No": ["INV001", "INV002", "INV003"],
+        "Invoice Date": ["2026-06-01", "2026-05-20", "2026-06-10"],
+        "Due Date": ["2026-07-01", "2026-06-20", "2026-07-10"],
+        "Amount": [150000, 80000, 120000],
+        "Status": ["Pending", "Paid", "Pending"]
+    })
+
+df = st.session_state.ap_data
+
+# ---------------- SIDEBAR ----------------
+st.sidebar.title("Accounts Payable")
+menu = st.sidebar.radio(
+    "Navigation",
+    ["Dashboard", "Invoice Entry", "Vendor Master", "Aging Analysis", "Reports"]
+)
+
+# ---------------- DASHBOARD ----------------
+if menu == "Dashboard":
+
+    st.title("💰 Accounts Payable Dashboard")
+
+    total_invoice = df["Amount"].sum()
+    total_pending = df[df["Status"] == "Pending"]["Amount"].sum()
+    total_paid = df[df["Status"] == "Paid"]["Amount"].sum()
+    vendor_count = df["Vendor"].nunique()
+
+    c1, c2, c3, c4 = st.columns(4)
+
+    c1.metric("Total AP", f"₹{total_invoice:,.0f}")
+    c2.metric("Pending", f"₹{total_pending:,.0f}")
+    c3.metric("Paid", f"₹{total_paid:,.0f}")
+    c4.metric("Vendors", vendor_count)
+
+    st.markdown("---")
+
+    status_chart = px.pie(
+        df,
+        names="Status",
+        values="Amount",
+        title="Invoice Status Distribution"
+    )
+
+    vendor_chart = px.bar(
+        df.groupby("Vendor")["Amount"].sum().reset_index(),
+        x="Vendor",
+        y="Amount",
+        title="Spend by Vendor"
+    )
+
+    col1, col2 = st.columns(2)
+
+    with col1:
+        st.plotly_chart(status_chart, use_container_width=True)
+
+    with col2:
+        st.plotly_chart(vendor_chart, use_container_width=True)
+
+    st.subheader("Recent Invoices")
+    st.dataframe(df, use_container_width=True)
+
+# ---------------- INVOICE ENTRY ----------------
+elif menu == "Invoice Entry":
+
+    st.title("🧾 Invoice Entry")
+
+    with st.form("invoice_form"):
+        vendor = st.text_input("Vendor Name")
+        invoice_no = st.text_input("Invoice Number")
+        invoice_date = st.date_input("Invoice Date")
+        due_date = st.date_input("Due Date")
+        amount = st.number_input("Amount", min_value=0.0)
+        status = st.selectbox("Status", ["Pending", "Paid"])
+
+        submit = st.form_submit_button("Add Invoice")
+
+        if submit:
+            new_row = pd.DataFrame({
+                "Vendor": [vendor],
+                "Invoice No": [invoice_no],
+                "Invoice Date": [invoice_date],
+                "Due Date": [due_date],
+                "Amount": [amount],
+                "Status": [status]
+            })
+
+            st.session_state.ap_data = pd.concat(
+                [st.session_state.ap_data, new_row],
+                ignore_index=True
+            )
+
+            st.success("Invoice added successfully.")
+
+# ---------------- VENDOR MASTER ----------------
+elif menu == "Vendor Master":
+
+    st.title("🏢 Vendor Master")
+
+    vendor_list = pd.DataFrame({
+        "Vendor Name": df["Vendor"].unique()
+    })
+
+    st.dataframe(vendor_list, use_container_width=True)
+
+    new_vendor = st.text_input("Add New Vendor")
+
+    if st.button("Add Vendor"):
+        st.success(f"{new_vendor} added to vendor list.")
+
+# ---------------- AGING ANALYSIS ----------------
+elif menu == "Aging Analysis":
+
+    st.title("⏳ AP Aging Analysis")
+
+    aging_df = df.copy()
+
+    today = pd.Timestamp.today()
+
+    aging_df["Due Date"] = pd.to_datetime(aging_df["Due Date"])
+
+    aging_df["Days Outstanding"] = (
+        today - aging_df["Due Date"]
+    ).dt.days
+
+    st.dataframe(aging_df, use_container_width=True)
+
+    aging_chart = px.histogram(
+        aging_df,
+        x="Days Outstanding",
+        title="Outstanding Aging Distribution"
+    )
+
+    st.plotly_chart(aging_chart, use_container_width=True)
+
+# ---------------- REPORTS ----------------
+elif menu == "Reports":
+
+    st.title("📊 Reports")
+
+    uploaded_file = st.file_uploader(
+        "Upload AP Data",
+        type=["csv"]
+    )
+
+    if uploaded_file:
+        upload_df = pd.read_csv(uploaded_file)
+
+        st.subheader("Uploaded Data")
+
+        st.dataframe(upload_df)
+
+        csv = upload_df.to_csv(index=False)
+
+        st.download_button(
+            "Download Report",
+            csv,
+            "accounts_payable_report.csv",
+            "text/csv"
+        )
+
+    st.subheader("Current AP Data")
+
+    st.dataframe(df)
+
+    report_csv = df.to_csv(index=False)
+
+    st.download_button(
+        "Download Current AP Report",
+        report_csv,
+        "ap_report.csv",
+        "text/csv"
+    )
