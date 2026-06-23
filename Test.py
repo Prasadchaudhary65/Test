@@ -211,5 +211,4 @@ elif menu == "Reports":
         "Download Current AP Report",
         report_csv,
         "ap_report.csv",
-        "text/csv"
-    )
+        "text/csv")
